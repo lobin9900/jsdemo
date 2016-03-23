@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type = text/javascript charset = utf-8>
+			
+			/***
+			 * 用javascript来模拟java中的Map
+			 * map.put()往map添加键值对
+			 * map.get()提取map中的键值对
+			 * map.remove()移除项
+			 * map.each遍历
+			 * map.size查看大小
+			 */
+			
+			function Map(){
+				var obj = {};
+				
+				this.put = function(key, value){
+					obj[key] = value;
+					
+				}
+				
+				this.get = function(key){
+					if (key || key === 0 || key === false) {
+						return obj[key];
+					}
+					else {
+						return null;
+					}
+					
+				}
+				
+				this.remove = function(key){
+					if(key || key === 0 || key === false){
+						delete obj[key];
+					}
+					
+				}
+				
+				this.size = function(){
+					var count = 0 ;
+					for(arrt in obj){
+						count++;
+					}
+					return count;
+					}
+				
+				this.each = function(fn){
+					for(attr in obj){
+						fn(attr,obj[attr]);
+					}
+					
+				}
+					
+			}
+				var m = new Map();
+				m.put('01', 'abc');
+				m.put('02', 17);
+				m.put('03', true);
+				m.put('04', new Date());
+				//m.remove('03');
+				m.each(function(key,value){
+					alert(key + ":" + value);
+				})
+				alert(m.size());
+				//alert(m.get('03'));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
