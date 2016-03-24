@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+			
+			//this对象:指向运行时期基于环境所绑定的
+			//this：总是纸箱调用者
+			
+			var k = 10;
+			function test(){
+				this.k = 20;
+			}
+			//window.test();
+			test();
+			alert(test.k);		//undefined
+			//alert(k);		//20
+			alert(window.k);
+			
+			/***
+			 * this指向了window，原来的k=10 在test方法内被window.k=20所覆盖
+			 * 所以输出是20.
+			 * alert(test.k)输出undefined 是因为test的成员变量k没初始化
+			 */
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

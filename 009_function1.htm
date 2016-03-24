@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Untitled Document</title>
+		<script type=text/javascript charset=utf-8>
+			
+			
+			//创建函数的方式
+			//1、function语句式
+			function test1(){
+				alert('test1');
+			}
+			test1();
+			
+			//函数直接量式
+			var test2 = function(){
+				alert('test2');
+			}
+			test2();
+			
+			//Function构造函数
+			var test3 = new Function('a','b',"return a+b");
+			alert(test3(10,20));
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
